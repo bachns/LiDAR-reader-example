@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 	unique_ptr<PipelineManager> manager(new PipelineManager);
 	//tìm tên driver để đọc file argv[1]
 	StageFactory factory;
-	string driver = factory.inferReaderDriver(argv[1]);
+	string driver = factory.inferReaderDriver(lasfile);
 	
 	//thêm driver vào manager
 	manager->addReader(driver);
@@ -40,12 +40,12 @@ int main(int argc, char* argv[])
 	Stage* reader = manager->getStage();
 	if (reader == nullptr)
 	{
-		std::cerr << "Could not read file " << argv[1];
+		std::cerr << "Could not read file " << lasfile;
 		return -1;
 	}
 
 	Options options;
-	Option fileNameOpt("filename", argv[1]);
+	Option fileNameOpt("filename", lasfile);
 	options.add(fileNameOpt);
 	reader->addOptions(options);
 
