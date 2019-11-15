@@ -66,9 +66,9 @@ int main(int argc, char* argv[])
 			double z = view->getFieldAs<double>(Dimension::Id::Z, i);
 			uint16_t intensity =  view->getFieldAs<uint16_t>(Dimension::Id::Intensity, i);
 			uint8_t returnNumber = view->getFieldAs<uint8_t>(Dimension::Id::ReturnNumber, i);
-			uint8_t numberOfReturns = view->getFieldAs<uint8_t>(pdal::Dimension::Id::NumberOfReturns, i);
-			uint16_t pointSourceId = view->getFieldAs<uint16_t>(pdal::Dimension::Id::PointSourceId, i);
-			uint8_t classification = view->getFieldAs<uint8_t>(pdal::Dimension::Id::Classification, i);
+			uint8_t numberOfReturns = view->getFieldAs<uint8_t>(Dimension::Id::NumberOfReturns, i);
+			uint16_t pointSourceId = view->getFieldAs<uint16_t>(Dimension::Id::PointSourceId, i);
+			uint8_t classification = view->getFieldAs<uint8_t>(Dimension::Id::Classification, i);
 
 			cout << "(" << x << ", " << y << ", " << z << ")" << endl;
 			cout << " intensity: " << intensity << endl;
